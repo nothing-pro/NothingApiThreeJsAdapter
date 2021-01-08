@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <style>
+            body, div, canvas{
+                border: 0px;
+                padding: 0px;
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div3d"></div>
+        <script src="../lib/nothing.api.js"></script>
+        <script>
+            async function createApp() {
+                // 创建App
+                const app = new NOTHING.App({
+                    el: 'div3d',
+                    scene: '../assets/models/school_building/scene.gltf'
+                });
+                // 初始化
+                await app.initialize();
+                const exts = NOTHING.Exts | new Map();
+                // 应用扩展
+                app.use(exts);
+                window.app = app;
+            }
+
+            createApp();
+        </script>
+    </body>
+</html>
