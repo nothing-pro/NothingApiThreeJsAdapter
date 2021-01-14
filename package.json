@@ -7,7 +7,8 @@
     "release": "webpack --env release",
     "build": "webpack --env build",
     "build:dev": "webpack --env dev",
-    "dev": "webpack --progress --colors --watch --env dev"
+    "dev": "webpack --progress --colors --watch --env dev",
+    "publish": "tyarn publish --registry=https://uquuu-npm.pkg.coding.net/nothingjs/natja/"
   },
   "repository": {
     "type": "git",
