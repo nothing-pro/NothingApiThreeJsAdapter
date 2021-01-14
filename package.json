@@ -2,6 +2,7 @@
   "name": "@zhoyq/nothingapithreejsadapter",
   "version": "0.0.1",
   "description": "nothing api 的 threejs 实现",
+  "main": "lib/nothing.api.min.js",
   "scripts": {
     "build": "webpack --env build",
     "build:dev": "webpack --env dev",
