@@ -4,14 +4,20 @@ const env = require('yargs').argv.env;
 
 let libraryName = 'NOTHING';
 
-let outputFile, mode;
+let outputFile, mode, outputPath;
 
 if (env === 'build') {
   mode = 'production';
   outputFile = '[name].min.js';
-} else {
+  outputPath = '/lib';
+} else if (env === 'dev') {
   mode = 'development';
   outputFile = '[name].js';
+  outputPath = '/lib';
+} else {
+  mode = 'production';
+  outputFile = '[name].min.js';
+  outputPath = '/dist';
 }
 
 const config = {
@@ -21,7 +27,7 @@ const config = {
   },
   devtool: 'source-map',
   output: {
-    path: __dirname + '/lib',
+    path: __dirname + outputPath,
     filename: outputFile,
     library: libraryName,
     libraryTarget: 'umd',
