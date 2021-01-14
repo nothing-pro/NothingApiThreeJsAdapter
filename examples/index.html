@@ -17,14 +17,16 @@
             async function createApp() {
                 // 创建App
                 const app = new NOTHING.App({
-                    el: 'div3d',
-                    scene: '../assets/models/school_building/scene.gltf'
+                    el: '#div3d',
+                    definition: {
+                       scene: 'scene01',
+                       scenes: {
+                           'scene01': {
+                               url: '../assets/models/school_building/scene.gltf'
+                           }
+                       }
+                    }
                 });
-                // 初始化
-                await app.initialize();
-                const exts = NOTHING.Exts | new Map();
-                // 应用扩展
-                app.use(exts);
                 window.app = app;
             }
 
